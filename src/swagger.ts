@@ -12,12 +12,9 @@ const options = {
       {
         url: "https://express-api-qfyg.onrender.com",
       },
-      {
-        url: "https://express-api-qfyg.onrender.com",
-      },
     ],
   },
-  apis: ["dist/routes/*.js"], // Path to the API docs
+  apis: ["./routes/*.js"], // Path to the API docs
 };
 
 const swaggerSpec = swaggerJSDoc(options);
