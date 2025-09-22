@@ -10,7 +10,7 @@ const options = {
     },
     servers: [
       {
-        url: "https://express-api-qfyg.onrender.com/",
+        url: "https://express-api-qfyg.onrender.com",
       },
     ],
   },
