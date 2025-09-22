@@ -9,9 +9,9 @@ const router = express.Router();
 
 /**
  * @swagger
- * /auth/:
+ * /api/v1/auth/sign-in:
  *   post:
- *     summary: Authenticate a user's email
+ *     summary: User sign in
  *     tags: [Auth]
  *     requestBody:
  *       required: true

@@ -16,7 +16,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /users/:
+ * /api/v1/users:
  *   get:
  *     summary: Get all users
  *     tags: [Users]
@@ -28,7 +28,7 @@ router.get("/", getUsers);
 
 /**
  * @swagger
- * /users/{id}:
+ * /api/v1/users/{id}:
  *   get:
  *     summary: Get users by role
  *     tags: [Users]
@@ -47,7 +47,7 @@ router.get("/:id", getUser);
 
 /**
  * @swagger
- * /users/:
+ * /api/v1/users:
  *   post:
  *     summary: Create a new user
  *     tags: [Users]
@@ -81,7 +81,7 @@ router.post("/", validate(UserSchema), createUser);
 
 /**
  * @swagger
- * /users/{id}:
+ * /api/v1/users/{id}:
  *   put:
  *     summary: Update an existing user
  *     tags: [Users]
@@ -117,7 +117,7 @@ router.put("/:id", authenticateToken, validate(UpdateUserSchema), updateUser);
 
 /**
  * @swagger
- * /users/{id}:
+ * /api/v1/users/{id}:
  *   delete:
  *     summary: Soft delete a user
  *     tags: [Users]
