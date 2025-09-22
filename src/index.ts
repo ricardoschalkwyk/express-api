@@ -8,11 +8,11 @@ import logger from "morgan";
 import path from "path";
 import swaggerUi from "swagger-ui-express";
 
+dotenv.config();
+
 import swaggerSpec from "./swagger";
 
-import v1Routes from "./routes/v1/index";
-
-dotenv.config();
+import v1Routes from "./routes/v1";
 
 var app = express();
 
@@ -24,11 +24,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api/v1", v1Routes);
-
-app.get("/openapi.json", (req, res) => {
-  res.setHeader("Content-Type", "application/json");
-  res.send(swaggerSpec);
-});
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 

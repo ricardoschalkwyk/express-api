@@ -12,12 +12,12 @@ const options = {
     servers: [
       {
         url: isProd
-          ? "https://express-api-qfyg.onrender.com/"
+          ? "https://express-api-qfyg.onrender.com"
           : "http://localhost:3000",
       },
     ],
   },
-  apis: [isProd ? "./routes/**/*.js" : "src/routes/**/*.ts"], // Path to the API docs
+  apis: ["src/routes/**/*.ts"], // Path to the API docs
 };
 
 const swaggerSpec = swaggerJSDoc(options);
