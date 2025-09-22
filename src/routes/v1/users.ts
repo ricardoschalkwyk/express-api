@@ -15,7 +15,7 @@ import { authenticateToken } from "../../middlewares";
 const router = express.Router();
 
 /**
- * @openapi
+ * @swagger
  * /users/:
  *   get:
  *     summary: Get all users

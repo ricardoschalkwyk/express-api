@@ -25,6 +25,11 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api/v1", v1Routes);
 
+app.get("/openapi.json", (req, res) => {
+  res.setHeader("Content-Type", "application/json");
+  res.send(swaggerSpec);
+});
+
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // catch 404 and forward to error handler
