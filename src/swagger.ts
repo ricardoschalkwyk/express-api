@@ -1,4 +1,5 @@
 import swaggerJSDoc from "swagger-jsdoc";
+let isProd = process.env.NODE_ENV === "production";
 
 const options = {
   definition: {
@@ -10,11 +11,13 @@ const options = {
     },
     servers: [
       {
-        url: "https://express-api-qfyg.onrender.com",
+        url: isProd
+          ? "https://express-api-qfyg.onrender.com/"
+          : "http://localhost:3000",
       },
     ],
   },
-  apis: ["./routes/*.js"], // Path to the API docs
+  apis: [isProd ? "./routes/**/*.js" : "src/routes/**/*.ts"], // Path to the API docs
 };
 
 const swaggerSpec = swaggerJSDoc(options);
