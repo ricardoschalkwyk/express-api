@@ -10,7 +10,7 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:3000", // Replace with your server URL
+        url: "https://express-api-qfyg.onrender.com/",
       },
     ],
   },
